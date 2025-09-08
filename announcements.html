@@ -88,6 +88,12 @@
         <div id="announcements-container">
         
             <div class="announcement">
+                <h2 class="toggle-header">測試公告2 <span class="toggle-icon">></span></h2>
+                <div class="time">2025-09-08 23:59:17 | 上傳者: 網站管理員</div>
+                <div class="content">test <a href="\1" target="_blank">\1</a></div>
+            </div>
+            
+            <div class="announcement">
                 <h2 class="toggle-header">測試用公告 <span class="toggle-icon">></span></h2>
                 <div class="time">2025-09-08 23:51:09 | 上傳者: 網站管理員</div>
                 <div class="content">TEST <a href="\1" target="_blank">\1</a></div>
@@ -128,18 +134,6 @@
                     icon.classList.add('open');
                     card.scrollIntoView({behavior: "smooth", block: "center"});
                 }
-            });
-        });
-        document.querySelectorAll('.toggle-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                if (content.style.maxHeight){
-                    content.style.maxHeight = null;
-                    header.querySelector('.toggle-icon').textContent = ">";
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    header.querySelector('.toggle-icon').textContent = "v";
-                } 
             });
         });
         </script>
