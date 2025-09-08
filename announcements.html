@@ -70,13 +70,31 @@
         a:hover {
             text-decoration: underline;
         }
+        .toggle-header {
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+        }
+        .toggle-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+        }
+        .toggle-icon {
+            margin-left: 8px; transition: transform 0.3s ease;
+        }
+        .new-badge {
+            color: red; font-weight: bold; margin-left: 5px;
+        }
         </style>
         </head>
         <body>
         <div id="announcements-container">
         
             <div class="announcement">
-                <h2>網站已更新! <span class="toggle-icon">▶</span></h2>
+                <h2 class="toggle-header">測試用公告 <span class="toggle-icon">></span></h2>
+                <div class="time">2025-09-08 23:51:09 | 上傳者: 網站管理員</div>
+                <div class="content">TEST <a href="\1" target="_blank">\1</a></div>
+            </div>
+            
+            <div class="announcement">
+                <h2 class="toggle-header">網站已更新! <span class="toggle-icon">></span></h2>
                 <div class="time">2025-09-08 23:17:00 | 上傳者: 網站管理員</div>
                 <div class="content">網站已更新至v1.0，更新內容：新增了公告系統、公告上傳系統程式更新。</div>
             </div>
@@ -110,6 +128,18 @@
                     icon.classList.add('open');
                     card.scrollIntoView({behavior: "smooth", block: "center"});
                 }
+            });
+        });
+        document.querySelectorAll('.toggle-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                    header.querySelector('.toggle-icon').textContent = ">";
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    header.querySelector('.toggle-icon').textContent = "v";
+                } 
             });
         });
         </script>
