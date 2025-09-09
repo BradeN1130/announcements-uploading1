@@ -88,15 +88,10 @@
         <div id="announcements-container">
         
             <div class="announcement">
-                <h2 class="toggle-header">網站已更新! <span class="toggle-icon">></span></h2>
-                <div class="time">2025-09-09 00:17:33 | 上傳者: 網站管理員</div>
-                <div class="content">網站已更新至v1.1，更新內容：公告系統bug修復、新增了可互動式公告系統、新增公告系統超連結偵測。</div>
-            </div>
-            
-            <div class="announcement">
-                <h2 class="toggle-header">網站已更新! <span class="toggle-icon">></span></h2>
-                <div class="time">2025-09-08 23:17:00 | 上傳者: 網站管理員</div>
-                <div class="content">網站已更新至v1.0，更新內容：新增了公告系統、公告上傳系統程式更新。</div>
+                <h2 class="toggle-header">公告測試1 <span class="toggle-icon">></span></h2>
+                <div class="time">2025-09-09 23:48:20 | 上傳者: 網站管理員</div>
+                <div class="content">內容測試1
+<a href="https://sites.google.com/view/tedbubu/" target="_blank">https://sites.google.com/view/tedbubu/</a></div>
             </div>
             
         </div>
@@ -107,7 +102,6 @@
                 const content = card.querySelector('.content');
                 const icon = header.querySelector('.toggle-icon');
 
-                // 收合其他
                 document.querySelectorAll('.announcement').forEach(c => {
                     if (c !== card) {
                         c.classList.remove('active');
@@ -116,7 +110,6 @@
                     }
                 });
 
-                // 切換目前的
                 const isOpen = content.classList.contains('show');
                 if (isOpen) {
                     content.classList.remove('show');
